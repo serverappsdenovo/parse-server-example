@@ -21,7 +21,8 @@ var api = new ParseServer({
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
 
-	// Enable email verification
+verbose: true,
+
   verifyUserEmails: true,
 
   // if `verifyUserEmails` is `true` and
