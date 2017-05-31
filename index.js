@@ -19,9 +19,7 @@ var api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  },
-
-verbose: true,
+  }
 
   verifyUserEmails: true,
 
@@ -43,7 +41,7 @@ verbose: true,
   // The public URL of your app.
   // This will appear in the link that is used to verify email addresses and reset passwords.
   // Set the mount path as it is in serverURL
-  publicServerURL: 'https://example.com/parse',
+  publicServerURL: process.env.SERVER_URL,
   // Your apps name. This will appear in the subject and body of the emails that are sent.
   appName: ‘ID-SIM Survey’,
   // The email adapter
@@ -51,7 +49,7 @@ verbose: true,
     module: 'parse-server-simple-mailgun-adapter',
     options: {
       // The address that your emails come from
-      fromAddress: 'parse@example.com',
+      fromAddress: ‘noreply@’,
       // Your domain from mailgun.com
       domain: process.env.MAILGUN_DOMAIN,
       apiKey: process.env.MAILGUN_API_KEY,
